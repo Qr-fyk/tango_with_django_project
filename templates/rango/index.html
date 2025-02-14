@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title_block %}
-    Rango
+    Homepage
 {% endblock %}
 
 {% block body_block %}
@@ -43,8 +43,6 @@
     </div>
 
     <div>
-        <a href="{% url 'rango:about' %}">About</a><br />
-        <a href="{% url 'rango:add_category' %}">Add a New Category</a>
         <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" />
     </div>
 {% endblock %}
