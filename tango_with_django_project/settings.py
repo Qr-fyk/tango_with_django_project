@@ -83,6 +83,8 @@ PASSWORD_HASHERS = (
     'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 )
 
+LOGIN_URL = 'rango:login'
+
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
 
