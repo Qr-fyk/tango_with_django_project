@@ -5,7 +5,7 @@ from rango.models import Page, Category
 
 class CategoryForm(forms.ModelForm):
     name = forms.CharField(
-        max_length=128,
+        max_length=Category.NAME_MAXLEN,
         help_text="Please enter the category name."
     )
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
@@ -21,7 +21,7 @@ class CategoryForm(forms.ModelForm):
 
 class PageForm(forms.ModelForm):
     title = forms.CharField(
-        max_length=128,
+        max_length=Page.TITLE_MAXLEN,
         help_text="Please enter the title of the page."
     )
     url = forms.URLField(
@@ -42,7 +42,7 @@ class PageForm(forms.ModelForm):
         exclude = ('category',)
         # or specify the fields to include (don't include the category field).
         # fields = ('title', 'url', 'views')
-        
+
     def clean(self):
         cleaned_data = self.cleaned_data
         url = cleaned_data.get('url')
