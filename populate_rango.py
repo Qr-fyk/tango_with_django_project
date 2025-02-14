@@ -5,7 +5,7 @@ import django
 django.setup()
 from rango.models import Category, Page
 
-def populate_rango():
+def populate():
     python_pages = [
         {'title': 'Official Python Tutorial', 'url': 'http://docs.python.org/3/tutorial/', 'views': 50},
         {'title': 'How to Think like a Computer Scientist', 'url': 'http://www.greenteapress.com/thinkpython/', 'views': 30},
