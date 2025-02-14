@@ -23,12 +23,17 @@ def populate_rango():
         {'title': 'Flask','url': 'http://flask.pocoo.org'},
     ]
 
-    cats = {'Python': {'pages': python_pages},'Django': {'pages': django_pages},'Other Frameworks': {'pages': other_pages}}
+    cats = {
+    'Python': {'pages': python_pages, 'views': 12, 'likes': 4},
+    'Django': {'pages': django_pages, 'views': 14, 'likes': 3},
+    'Other Frameworks': {'pages': other_pages, 'views': 7, 'likes': 1}
+    }
+
 
     for cat, cat_data in cats.items():
-        c = add_cat(cat)
-        for p in cat_data['pages']:
-            add_page(c, p['title'], p['url'])
+        c = add_cat(cat, cat_data['views'], cat_data['likes'])  # Pass views and likes
+    for p in cat_data['pages']:
+        add_page(c, p['title'], p['url'])
 
     for c in Category.objects.all():
         for p in Page.objects.filter(category=c):
@@ -42,8 +47,10 @@ def add_page(cat, title, url, views=0):
     p.save()
     return p
 
-def add_cat(cat):
-    c = Category.objects.get_or_create(name=cat)[0]
+def add_cat(name, views=0, likes=0):
+    c = Category.objects.get_or_create(name=name)[0]
+    c.views = views
+    c.likes = likes
     c.save()
     return c
 
