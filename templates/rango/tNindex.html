@@ -1,0 +1,50 @@
+{% extends 'rango/tNbase.html' %}
+<!DOCTYPE html>
+
+{% block title_block %}
+    Homepage
+{% endblock %}
+
+{% block header_block %}
+    <h1>Homepage</h1>    
+{% endblock %}
+
+{% block body_block %}
+    <div>
+        <strong>{{boldmessage}}</strong><br>
+        {% if user.is_authenticated %}
+            howdy {{user.username}}!
+        {% else %}
+            hey there partner!
+        {% endif %}
+    </div>
+    <hr>
+    
+    <div>
+        <h2>List of recommended notes</h2>
+        {% if categories %}
+            <ul>
+                {% for category in categories %}<!--here shows the notes-->
+                    <li>list</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no notes present.</strong>
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        <h2>List of courses</h2>
+        {% if pages %}
+            <ul>
+                {% for page in pages %}<!--here shows the courses-->
+                    <li>list</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no notes present.</strong>
+        {% endif %}
+
+    </div>
+{% endblock %}
+

@@ -1,0 +1,35 @@
+{% extends 'rango/tNbase.html' %}
+<!DOCTYPE html>
+
+{% block title_block %}
+    Course Name
+{% endblock %}
+
+{% block header_block %}
+    <h1>Courses</h1>
+{% endblock %}
+
+{% block body_block %}
+      
+    <div>
+        <h2>List of notes</h2>
+        {% if categories %}
+            <ul>
+                {% for category in categories %}<!--here shows the notes-->
+                    <li><a href = "/rango/category/{{category.slug}}">{{category.name}}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no notes present.</strong>
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {% if user.is_authenticated %}
+            <a href = "{% url 'thinkNote:upload' %}">botton-Upload a note</a>
+        {% else %}
+            Login to upload notes.
+        {% endif%}
+    </div>
+{% endblock %}
+

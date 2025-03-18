@@ -17,6 +17,23 @@
     </div>
 
     <div>
+        <h2>group work tests</h2>
+        <ul>
+            <li><a href="{% url 'rango:tNindex' %}">ThinkNote index</a></li>
+            <li><a href="{% url 'rango:tNcourse' %}">Courses</a></li>
+            <li><a href="{% url 'rango:tNlogin' %}">Login</a></li>
+            <li><a href="{% url 'rango:tNnote' %}">Notes</a></li>
+            <li><a href="{% url 'rango:tNregister' %}">Register</a></li>
+            <li><a href="{% url 'rango:tNsearch' %}">Search</a></li>
+            <li><a href="{% url 'rango:tNupload' %}">Upload</a></li>
+            <li><a href="{% url 'rango:tNuser' %}">User profile</a></li>
+        </ul>
+        
+        
+
+    </div>
+
+    <div>
         {% if categories %}
             <h2>Most Liked Categories</h2>
             <ul>

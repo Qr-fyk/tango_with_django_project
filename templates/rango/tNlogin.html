@@ -1,0 +1,26 @@
+{% extends 'rango/tNbase.html' %}
+<!DOCTYPE html>
+
+{% block title_block %}
+    User Login
+{% endblock %}
+
+{% block header_block %}
+    <h1>User Login</h1>    
+{% endblock %}
+
+{% block body_block %}
+    
+    <div><!--Login function-->
+        <h1>Login to ThinkNote</h1>
+        <form id="login_form" method="post" action="{% url 'rango:tNlogin' %}">
+        {% csrf_token %}
+            Username: <input type="text" name="username" value="" size="50" />
+            <br />
+            Password: <input type="password" name="password" value="" size="50" />
+            <br />
+            <input type="submit" value="submit" />
+        </form>
+    </div>
+
+{% endblock %}

@@ -14,4 +14,13 @@ urlpatterns = [
     path('login/', views.user_login, name='login'),
     path('restricted/', views.restricted, name='restricted'),
     path('logout/', views.user_logout, name='logout'),
+    
+    path('tNindex', views.tNindex, name='tNindex'),
+    path('tNcourse', views.tNcourse, name='tNcourse'),
+    path('tNlogin', views.tNlogin, name='tNlogin'),
+    path('tNnote', views.tNnote, name='tNnote'),
+    path('tNregister', views.tNregister, name='tNregister'),
+    path('tNsearch', views.tNsearch, name='tNsearch'),
+    path('tNupload', views.tNupload, name='tNupload'),
+    path('tNuser', views.tNuser, name='tNuser'),
 ]

@@ -1,0 +1,38 @@
+{% extends 'rango/tNbase.html' %}
+<!DOCTYPE html>
+
+{% block title_block %}
+    {% if searchTitle %}
+        {{ searchTitle }}
+    {% else %}
+        Search
+    {% endif %}
+{% endblock %}
+
+{% block header_block %}
+    {% if searchTitle %}
+        <h1>{{ searchTitle }}</h1>
+    {% else %}
+        <h1>Search Title not found</h1>
+    {% endif %}
+{% endblock %}
+
+{% block body_block %}
+      
+    <div>
+
+        {% if searchResults%}
+            <h3>Maybe you want to find: </h3>
+            <br>
+            <ul>
+                {% for searchResult in searchResults %}
+                    <li></li><!--here links to different notes-->
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>No results found.</strong>
+        {% endif %}       
+    </div>
+    
+{% endblock %}
+

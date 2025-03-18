@@ -1,0 +1,33 @@
+{% extends 'rango/tNbase.html' %}
+<!DOCTYPE html>
+
+{% block title_block %}
+    Register
+{% endblock %}
+
+{% block header_block %}
+    <h1>User Register</h1>    
+{% endblock %}
+
+{% block body_block %}
+    
+    <div><!--Register function-->
+        <h1>Register for ThinkNote</h1>
+        {% if registered %}
+            <strong>thank you for registering!</strong>
+            <br>
+            <a href="/rango/">Return to the homepage.</a>
+        {% else %}
+            <strong>register here!</strong>
+            <form id = "user_form" method="post" action="{% url 'rango:tNregister' %}" enctype="multipart/form-data">
+
+                {% csrf_token %}
+                {{ user_form.as_p }}
+                {{ profile_form.as_p }}
+
+                <input type="submit" name="submit" value="Register" />
+            </form>
+        {% endif %}
+    </div>
+
+{% endblock %}

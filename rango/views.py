@@ -36,6 +36,32 @@ def index(request):
 
     return response
 
+def tNindex(request):
+    return render(request, 'rango/tNindex.html')
+
+def tNcourse(request):
+    return render(request, 'rango/tNcourse.html')
+
+def tNlogin(request):
+    return render(request, 'rango/tNlogin.html')
+
+def tNnote(request):
+    return render(request, 'rango/tNnote.html')
+
+def tNregister(request):
+    return render(request, 'rango/tNregister.html')
+
+def tNsearch(request):
+    return render(request, 'rango/tNsearch.html')
+
+def tNupload(request):
+    return render(request, 'rango/tNupload.html')
+
+def tNuser(request):
+    return render(request, 'rango/tNuser.html')
+
+
+
 def about(request):
     context_dict = {}
     visitor_cookie_handler(request)

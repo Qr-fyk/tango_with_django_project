@@ -1,0 +1,36 @@
+{% extends 'thinkNote/base.html' %}
+<!DOCTYPE html>
+
+{% block title_block %}
+    My Profile
+{% endblock %}
+
+{% block header_block %}
+    <h1>My Profile</h1>
+{% endblock %}
+
+{% block body_block %}
+      
+    <div>
+        <h2>My notes</h2>
+        {% if categories %}
+            <ul>
+                {% for category in categories %}<!--Here shows the notes-->
+                    <li><a href = "/rango/category/{{category.slug}}">{{category.name}}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            You have not upload any notes yet.
+        {% endif %}
+    </div>
+    <br>
+    <div>
+        {% if categories %}
+            <p>Edit notes</p>
+            <a href = "{% url 'thinkNote:upload' %}">botton-Upload a note</a>
+            <p>Delete note</p>
+        {% else %}
+        {% endif%}
+    </div>
+{% endblock %}
+
