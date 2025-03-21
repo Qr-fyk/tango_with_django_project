@@ -1,0 +1,47 @@
+h1{
+    text-align: center; /* Centers the text horizontally within its container */
+    margin: auto;
+    font-family: serif;
+    color: black;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+#slogan{
+    font-size: 18px;
+    font-family: Georgia, serif;
+    text-align: center;
+    margin: auto;
+}
+
+.sideBar {
+    width: 250px; /* Fixed width for the sidebar */
+    background-color: #c4d7d6; /* Light background color */
+    padding: 20px; /* Add some padding */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Add a shadow for separation */
+    height: 100vh; /* Full height of the viewport */
+    position: fixed; /* Fix the sidebar to the right */
+    right: 0; /* Position it on the right */
+    top: 100px; /* Align it to the top */
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+.mainContent {
+    text-align: center;
+    width:calc(100vw - 320px);
+    max-width: 2000px;
+    padding: 10px;
+}
+.mainContent pre {
+    text-align:left;
+    max-width: 100%; /* Ensure the pre element doesn't exceed its container's width */
+    white-space: pre-wrap; /* Allow text to wrap */
+    word-wrap: break-word; /* Break long words if necessary */
+    overflow-x: auto; /* Add horizontal scrollbar only if needed */
+    padding: 10px; /* Optional: Add some padding */
+}

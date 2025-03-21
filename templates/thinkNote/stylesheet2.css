@@ -1,0 +1,14 @@
+body{
+    background-color:darkgrey;
+    color : white
+}
+
+#red h2{
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    color:black;
+}
+
+.red h2{
+    color: red;
+}

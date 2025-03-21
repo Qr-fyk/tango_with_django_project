@@ -1,0 +1,44 @@
+body{
+    background-color: #d0dfe6;
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+}
+
+#toolBar {
+    background-color: #c3d7df;
+    display: flex;
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Align items vertically in the center */
+    padding: 10px; /* Add some padding */
+    width: 100%; /* Ensure the toolbar spans the full width */
+    margin: 0; /* Remove any external margin */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    position: sticky; /* Make the toolbar sticky */
+    top: 0; /* Stick to the top of the viewport */
+    z-index: 1000; /* Ensure the toolbar is above other content */
+}
+
+#tNicon{
+    font-size: 28px;
+    text-decoration: none;
+}
+
+#tNicon strong{
+    color: #9388bb;
+}
+
+#tNicon em{
+    color: #6e8b74;
+}
+
+.useLoginfo{
+    font-size: 18px;
+    color: #FBCA04;
+    text-shadow: 1px -1px 0 #caac2a;
+        
+}
+
+.useLoginfo a{
+    text-decoration: none;
+    color: #FBCA04;
+}

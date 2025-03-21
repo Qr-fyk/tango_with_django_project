@@ -6,22 +6,15 @@
 {% endblock %}
 
 {% block header_block %}
-    <h1>Homepage</h1>    
+    <h1 id="tNicon">Unlock Knowledge Through <strong>Think</strong><em>Note</em></h1>    
 {% endblock %}
 
 {% block body_block %}
-    <div>
-        <strong>{{boldmessage}}</strong><br>
-        {% if user.is_authenticated %}
-            howdy {{user.username}}!
-        {% else %}
-            hey there partner!
-        {% endif %}
-    </div>
-    <hr>
+    <h2 id="slogan">Connecting Minds, Sharing Notes.</h2>
+    <br>
     
-    <div>
-        <h2>List of recommended notes</h2>
+    <div class="mainContent">
+        <h2>Recommended notes:</h2>
         {% if categories %}
             <ul>
                 {% for category in categories %}<!--here shows the notes-->
@@ -29,11 +22,18 @@
                 {% endfor %}
             </ul>
         {% else %}
-            <strong>There are no notes present.</strong>
+            There are no notes present.
         {% endif %}
+    
+        <h4>Text File Content for test</h4>
+        {% if file_content%}
+            <pre>{{ file_content }}</pre>
+        {% endif %}
+        
+ 
     </div>
     <br>
-    <div>
+    <div class="sideBar">
         <h2>List of courses</h2>
         {% if pages %}
             <ul>
@@ -44,6 +44,10 @@
         {% else %}
             <strong>There are no notes present.</strong>
         {% endif %}
+
+    </div>
+
+    <div>
 
     </div>
 {% endblock %}
